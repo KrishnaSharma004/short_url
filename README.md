@@ -74,14 +74,6 @@ classifier trained on ~420k labelled URLs (35 lexical features computed from the
 | GET | `/api/admin/urls` · `/api/admin/stats` | admin | |
 | GET | `/:code` | – | 302 redirect |
 
-## Structure
-
-```
-server/src  config/ models/ middleware/ services/ controllers/ routes/ utils/  app.js server.js
-server/src/ml  (model.json, features.js, gbm.js)   ml/  (training pipeline, metrics)
-server/tests  server/scripts/seed.js
-client/src  pages/ components/ api.js auth.jsx
-```
 
 ## Talking points for the demo
 

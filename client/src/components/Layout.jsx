@@ -10,7 +10,7 @@ export default function Layout({ children }) {
       <header className="nav">
         <div className="container nav-inner">
           <Link to="/" className="brand">
-            <span className="logo">🔗</span> Snip
+            <span className="logo">🔗</span> YOURL Shortener
           </Link>
           <nav className="nav-links">
             {user ? (
