@@ -1,0 +1,126 @@
+{
+  "dataset": {
+    "source": "faizann24/Using-machine-learning-to-detect-malicious-URLs (data.csv)",
+    "rows_raw": 420464,
+    "rows_clean": 520006,
+    "augmented_bare_domain_benign": 108764,
+    "split": "grouped by host (80/20)",
+    "malicious": 66442,
+    "benign": 453564,
+    "train": 403033,
+    "test": 116973,
+    "n_features": 35
+  },
+  "models": {
+    "Logistic Regression": {
+      "threshold": 0.5,
+      "accuracy": 0.8467167636976054,
+      "precision": 0.39465814591782394,
+      "recall": 0.7534214436537108,
+      "f1": 0.5179848378945104,
+      "roc_auc": 0.8896939232809759,
+      "false_positive_rate": 0.14183287581824813,
+      "tn": 89409,
+      "fp": 14777,
+      "fn": 3153,
+      "tp": 9634
+    },
+    "Random Forest": {
+      "threshold": 0.5,
+      "accuracy": 0.8517692116984261,
+      "precision": 0.4157785671995263,
+      "recall": 0.878704934699304,
+      "f1": 0.5644671070809575,
+      "roc_auc": 0.93676391517369,
+      "false_positive_rate": 0.15153667479315838,
+      "tn": 88398,
+      "fp": 15788,
+      "fn": 1551,
+      "tp": 11236
+    },
+    "Gradient Boosting": {
+      "threshold": 0.5,
+      "accuracy": 0.9419353184068119,
+      "precision": 0.7408597830453998,
+      "recall": 0.7210448111363104,
+      "f1": 0.7308180088776157,
+      "roc_auc": 0.9455430053178455,
+      "false_positive_rate": 0.03095425489029236,
+      "tn": 100961,
+      "fp": 3225,
+      "fn": 3567,
+      "tp": 9220
+    }
+  },
+  "operating_points": {
+    "flag_0.50": {
+      "threshold": 0.5,
+      "accuracy": 0.9419353184068119,
+      "precision": 0.7408597830453998,
+      "recall": 0.7210448111363104,
+      "f1": 0.7308180088776157,
+      "roc_auc": 0.9455430053178455,
+      "false_positive_rate": 0.03095425489029236,
+      "tn": 100961,
+      "fp": 3225,
+      "fn": 3567,
+      "tp": 9220
+    },
+    "block_0.90": {
+      "threshold": 0.9,
+      "accuracy": 0.9338223350687765,
+      "precision": 0.9689591078066915,
+      "recall": 0.4076796746695863,
+      "f1": 0.5738977266472175,
+      "roc_auc": 0.9455430053178455,
+      "false_positive_rate": 0.0016029025012957595,
+      "tn": 104019,
+      "fp": 167,
+      "fn": 7574,
+      "tp": 5213
+    }
+  },
+  "top_features": [
+    {
+      "feature": "len_path",
+      "importance": 0.13674923856904528
+    },
+    {
+      "feature": "tld_len",
+      "importance": 0.13221303505677398
+    },
+    {
+      "feature": "ext_php",
+      "importance": 0.08708149171642861
+    },
+    {
+      "feature": "long_token",
+      "importance": 0.08650469814603164
+    },
+    {
+      "feature": "host_digits",
+      "importance": 0.06747224971646823
+    },
+    {
+      "feature": "slashes",
+      "importance": 0.05262226191528602
+    },
+    {
+      "feature": "dots",
+      "importance": 0.04309392036839747
+    },
+    {
+      "feature": "keyword_hits",
+      "importance": 0.039114530787968525
+    },
+    {
+      "feature": "tld_risky",
+      "importance": 0.03761270808233338
+    },
+    {
+      "feature": "hyphens",
+      "importance": 0.035521943735463246
+    }
+  ],
+  "export_parity_max_abs_diff": 5.551115123125783e-17
+}

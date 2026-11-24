@@ -1,0 +1,23 @@
+# docker compose up --build   ->  http://localhost:8001
+# Needs a .env next to this file with JWT_SECRET=... (see .env.example)
+services:
+  api:
+    build: .
+    ports: ["8001:8001"]
+    environment:
+      PORT: 8001
+      MONGO_URI: mongodb://mongo:27017/url_shortener
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: ${JWT_SECRET:?set JWT_SECRET in .env}
+      BASE_URL: ${BASE_URL:-http://localhost:8001}
+      ADMIN_EMAIL: ${ADMIN_EMAIL:-}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY:-}
+      THREAT_BLOCK_THRESHOLD: ${THREAT_BLOCK_THRESHOLD:-0.9}
+    depends_on: [mongo, redis]
+  mongo:
+    image: mongo:7
+    volumes: [mongo-data:/data/db]
+  redis:
+    image: redis:7-alpine
+volumes:
+  mongo-data:
