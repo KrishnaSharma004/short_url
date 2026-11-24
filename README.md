@@ -83,10 +83,6 @@ server/tests  server/scripts/seed.js
 client/src  pages/ components/ api.js auth.jsx
 ```
 
-## Tests
-
-`cd server && npm test` (downloads an in-memory MongoDB on first run), or point `TEST_MONGO_URI` at any Mongo.
-
 ## Talking points for the demo
 
 - Why 302 not 301 (browser caching would hide repeat clicks from analytics)
